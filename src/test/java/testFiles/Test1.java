@@ -23,7 +23,7 @@ public class Test1 extends BasePo{
 	public void tearDown() {
 		closeBrowser();
 	}
-	 @Test(priority = 1)
+	 @Test(description = "Confirm accessibility of the top-level menus: Home, Our Story, Our Solution, and Why Tendable", priority= 1)
 	    public void testTopLevelMenuAccessibility() throws Exception {
 		 homeSteps.userLandsOnHomePage();
 		 homeSteps.clickOnMenuItem(HeaderMenuItemsEnum.OurSolution);
@@ -33,7 +33,7 @@ public class Test1 extends BasePo{
 		 homeSteps.clickOnMenuItem(HeaderMenuItemsEnum.WhyTendableWithSpecialCharacter);
 		 homeSteps.assertMenuItem(HeaderMenuItemsEnum.WhyTendable);
 	    }
-	    @Test(priority = 2)
+	    @Test(description = "Verify that the 'Request a Demo' button is present and active on each of the aforementioned top-level menu pages.", priority= 2)
 	    public void testRequestADemoButtonPresenceAndIsActive() throws Exception {
 	    	 homeSteps.userLandsOnHomePage();
 	    	 homeSteps.clickOnMenuItem(HeaderMenuItemsEnum.OurSolution);
@@ -43,7 +43,7 @@ public class Test1 extends BasePo{
 			 homeSteps.clickOnMenuItem(HeaderMenuItemsEnum.WhyTendableWithSpecialCharacter);
 	    	 homeSteps.assertRequestDemoButton(HeaderMenuItemsEnum.RequestADemo.getValue());
 	    }
-	    @Test(priority = 3)
+	    @Test(description = "Navigate to the 'Contact Us' section, choose 'Marketing', and complete the form excluding the 'Message' field. On submission, an error should arise", priority= 3)
 	    public void testContactUsFormSubmission() throws Exception {
 	    	 homeSteps.userLandsOnHomePage();
 	    	 homeSteps.clickOnMenuItem(HeaderMenuItemsEnum.ContactUs);
